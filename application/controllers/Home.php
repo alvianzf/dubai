@@ -13,8 +13,9 @@ class Home extends CI_Controller
 		
 	}
 
-	public function index(){
-		
+	public function index()
+	{
+	
 		$data['content_page']="index_content";
 
 		$data['product_data']=$this->ProductsModel->getResult_prize_1(10);
@@ -26,6 +27,7 @@ class Home extends CI_Controller
 		$data['product_data_spec_1']=$this->ProductsModel->getResult_spec_1(1);
 		$data['product_data_spec_1_before']=$this->ProductsModel->getResult_spec_1_before(1);
 
+		$data['show_time'] = $this->ProductsModel->getTimeShow();
 		/*$data['product_data_hari']=$this->ProductsModel->getResult_prize_1_hari(7);*/
 		$this->load->view('index',$data);
 	}
