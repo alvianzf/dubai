@@ -13,6 +13,7 @@ class Result extends CI_Controller
 		$this->load->library('Pagination');	
 		$this->load->helper('site');
 		$this->load->helper('sidebar');
+		$this->load->helper('content_site');
 	}
 
 	public function index(){
@@ -63,6 +64,7 @@ class Result extends CI_Controller
 		$data['product_data_result']=$this->ProductsModel->getResult_prize_result($start_data,$config['per_page']);
 		$data['site_info_data'] = siteInfo();	
 		$data['sidebar_data'] = sidebarData();
+		$data['content_site'] = contentSite();
 		
 		$this->load->view('index',$data);
 	}

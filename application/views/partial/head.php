@@ -19,15 +19,6 @@
 <?php echo $site_info_data['siteinfo_verification']; ?>
 <link rel="icon" href="<?php echo $site_info_data['siteinfo_favicon']; ?>" sizes="192x192" />
 <link itemprop rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lalezar&subset=arabic,latin-ext,vietnamese" />
-<?php 
-		include 'config.php';
-		$sql = 'SELECT * FROM content LIMIT 0,1';
-		$qsql = $koneksi->query($sql);
-		$rsql = $qsql->fetch_assoc();
-?>
-
-
-<!-- End Site Info -->
 
 <link href="<?php echo base_url(); ?>vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="<?php echo base_url(); ?>css/heroic-features.css" rel="stylesheet">
@@ -98,7 +89,7 @@ table th {
 </style>
 <!-- Custom Style -->
 <style>
-<?php echo $rsql['custom_site']; ?>
+<?php echo $content_site['custom_site']; ?>
 @media only screen and (max-width: 456px) {
   .td_mobile, .th_mobile {
     display: none;
