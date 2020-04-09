@@ -4,28 +4,20 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<!-- Site Info -->
-<?php 
-		include 'config.php';
-		header('Content-Type: text/html; charset=utf-8');
-        mysqli_set_charset($koneksi,"utf8");
-		$sql = 'SELECT * FROM siteinfo LIMIT 0,1';
-		$qsql = $koneksi->query($sql);
-		$rsql = $qsql->fetch_assoc();
-?>
-<title><?php echo $rsql['siteinfo_title']; ?></title>
-<meta name="description" content="<?php echo $rsql['siteinfo_desc']; ?>">
-<meta name="keyword" content="<?php echo $rsql['siteinfo_keyword']; ?>">
+
+<title><?php echo $site_info_data['siteinfo_title']; ?></title>
+<meta name="description" content="<?php echo $site_info_data['siteinfo_desc']; ?>">
+<meta name="keyword" content="<?php echo $site_info_data['siteinfo_keyword']; ?>">
 <script type="text/javascript" >
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', '<?php echo $rsql['siteinfo_analitics']; ?>', 'auto');
+	ga('create', '<?php echo $site_info_data['siteinfo_analitics']; ?>', 'auto');
 	// Plugins
 	
 	ga('send', 'pageview');
 </script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
-<?php echo $rsql['siteinfo_verification']; ?>
-<link rel="icon" href="<?php echo $rsql['siteinfo_favicon']; ?>" sizes="192x192" />
+<?php echo $site_info_data['siteinfo_verification']; ?>
+<link rel="icon" href="<?php echo $site_info_data['siteinfo_favicon']; ?>" sizes="192x192" />
 <link itemprop rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lalezar&subset=arabic,latin-ext,vietnamese" />
 <?php 
 		include 'config.php';

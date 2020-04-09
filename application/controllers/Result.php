@@ -11,6 +11,7 @@ class Result extends CI_Controller
 		parent::__construct();
 		$this->load->model('ProductsModel');
 		$this->load->library('Pagination');	
+		$this->load->helper('site');
 	}
 
 	public function index(){
@@ -59,7 +60,7 @@ class Result extends CI_Controller
 		$start_data=($this->uri->segment(2)) ? $this->uri->segment(2) : 0;
 		$config['per_page']=30;
 		$data['product_data_result']=$this->ProductsModel->getResult_prize_result($start_data,$config['per_page']);
-		
+		$data['site_info_data'] = siteInfo();	
 		
 		$this->load->view('index',$data);
 	}

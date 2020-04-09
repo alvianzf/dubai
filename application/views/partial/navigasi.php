@@ -19,14 +19,8 @@
         <section class="header-site nav-clear layers-logo-large">
 			<div class="container header-block" >
 				<div class="logo">
-				    <?php 
-                		include 'config.php';
-                		$sql = 'SELECT * FROM siteinfo LIMIT 0,1';
-                		$qsql = $koneksi->query($sql);
-                		$rsql = $qsql->fetch_assoc();
-                    ?>
                     <a href="<?php echo base_url();?>" class="custom-logo-link" rel="home" itemprop="url">
-                        <img width="736" height="251" src="<?php echo $rsql['siteinfo_logo']; ?>" class="custom-logo" alt="Dubai Pools Today" itemprop="logo" sizes="(max-width: 736px) 100vw, 736px" /></a>		
+                        <img width="736" height="251" src="<?php echo $site_info_data['siteinfo_logo']; ?>" class="custom-logo" alt="Dubai Pools Today" itemprop="logo" sizes="(max-width: 736px) 100vw, 736px" /></a>		
                         <div class="site-description">
                             
                         </div>

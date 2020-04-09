@@ -1,23 +1,16 @@
-<?php 
-		include 'config.php';
-		$sql = 'SELECT * FROM siteinfo LIMIT 0,1';
-		$qsql = $koneksi->query($sql);
-		$rsql = $qsql->fetch_assoc();
-?>
-
 <section id="footer" class="footer-site">
 	<div class="container content clearfix">
 		<div class="grid">
 			<div class="column span-12 last">
 				<aside id="custom_html-4" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget">
 					<div class="div-logo-footer">
-						<img class="img-logo-footer" src="<?php echo $rsql['siteinfo_logo']; ?>" alt="" />
+						<img class="img-logo-footer" src="<?php echo $site_info_data['siteinfo_logo']; ?>" alt="" />
 						</div>
 						<div class="div-bank-footer">
-							<img class="img-banks" src="<?php echo $rsql['siteinfo_logo_bank']; ?>" alt="" />
+							<img class="img-banks" src="<?php echo $site_info_data['siteinfo_logo_bank']; ?>" alt="" />
 						</div>
 						<div class="footer-text">
-							<?php echo $rsql['siteinfo_footer']; ?>
+							<?php echo $site_info_data['siteinfo_footer']; ?>
 						</div>
 					</div>
 				</aside>

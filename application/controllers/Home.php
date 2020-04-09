@@ -10,12 +10,12 @@ class Home extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('ProductsModel');
-		
+		$this->load->helper('site');
 	}
 
 	public function index()
 	{
-	
+		$data['site_info_data'] = siteInfo();
 		$data['content_page']="index_content";
 
 		$data['product_data']=$this->ProductsModel->getResult_prize_1(10);
