@@ -1,71 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-US" prefix="og: http://ogp.me/ns#">
-
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <meta charset="utf-8">
-<?php
-
-$koneksi = new mysqli('localhost','dubajzvx_dubai4dpools','Aa788888Wt@','dubajzvx_dubai4dpools');
-$sql = "SELECT * FROM waktu_tbl";
-$qsql = $koneksi->query($sql);
-$rsql = $qsql->fetch_assoc();
-
-date_default_timezone_set('Asia/Jakarta');
-$local = date('H:i:s');
-$first_result_time = $rsql['1st_prize'];;
-$second_result_time = $rsql['2nd_prize'];
-$third_result_time = $rsql['3rd_prize'];
-$preparation_time = $rsql['spec_1'];
-
-
-$d_timestamp = strtotime($local);
-$d1_timestamp = strtotime($first_result_time);
-$d2_timestamp = strtotime($second_result_time);
-$d3_timestamp = strtotime($third_result_time);
-$d4_timestamp = strtotime($preparation_time);
-
-$time_diff_first_with_second = $d1_timestamp - $d_timestamp;
-$time_diff_second_with_third = $d2_timestamp - $d_timestamp;
-$time_diff_third_with_preparation = $d3_timestamp - $d_timestamp;
-$time_diff_preparation_time_with_third = $d4_timestamp - $d_timestamp;
-
-
-
-
-if($local>=$first_result_time){
-	echo "<meta http-equiv='refresh' content=''>";
-}
-
-else{
-		if($local>=$second_result_time){
-		echo "<meta http-equiv='refresh' content='$time_diff_first_with_second'>";
-		}
-
-		else{
-				if($local>=$third_result_time){
-				echo "<meta http-equiv='refresh' content='$time_diff_second_with_third'>";
-				}
-
-				else{
-						if($local>=$preparation_time){
-							echo "<meta http-equiv='refresh' content='$time_diff_third_with_preparation'>";
-							}
-
-						else{
-								echo "<meta http-equiv='refresh' content='$time_diff_preparation_time_with_third'>";
-							}
-				
-					}
-			}
-
-
-
-	}
-	
-
-?>
-
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <!-- Site Info -->
 <?php 
