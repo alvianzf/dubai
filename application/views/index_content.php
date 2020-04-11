@@ -115,40 +115,63 @@
 									</tr>
 								</thead>
 								<tbody>
-									<?php
-
-										
-										
-											foreach ($product_data as $data_1st) {
+									<?php 
+										foreach ($product_data as $data_1st) {
+											$date=date_create($data_1st['tanggal']);
 									?>
-										<tr>
-											<td>
-											<?php echo $data_1st['hasil_id']; ?>
-											</td>
-											<td class="td_mobile">
-												<span style="text-transform:capitalize;"><?php echo $data_1st['hari']; ?></span>
-											</td>
-											<td class="td_date">
-												<?php 
-													$date=date_create($data_1st['tanggal']);
-													echo date_format($date,"d-m-Y");?> 	
-											</td>
-											<td>
-												<div class="result_page" style="text-align:center;">
-													<span class="ball_result_page"><?php $data1=$data_1st['hasil_1'];echo $namafile= substr($data1,0,-3);?></span>
-													<span class="ball_result_page"><?php $data1=$data_1st['hasil_1'];echo $namafile= substr($data1,1,-2);?></span>
-													<span class="ball_result_page"><?php $data1=$data_1st['hasil_1'];echo $namafile= substr($data1,2,-1);?></span>
-													<span class="ball_result_page"><?php $data1=$data_1st['hasil_1'];echo $namafile= substr($data1,3,1);?></span>
-												</div>
-											</td>
-										</tr>
+										<?php if(date_format($date,"d") == date("d") && strtotime(date("H:i:s")) < strtotime($show_time['first_result_time'])) { ?>
+
+
+										<?php } elseif(date_format($date,"d") == date("d") && strtotime(date("H:i:s")) > strtotime($show_time['first_result_time'])){ ?>
+											<tr>
+												<td>
+												<?php echo $data_1st['hasil_id']; ?>
+												</td>
+												<td class="td_mobile">
+													<span style="text-transform:capitalize;"><?php echo $data_1st['hari']; ?></span>
+												</td>
+												<td class="td_date">
+													<?php 
+														
+														echo date_format($date,"d-m-Y");?> 	
+												</td>
+												<td>
+													<div class="result_page" style="text-align:center;">
+														<span class="ball_result_page"><?php $data1=$data_1st['hasil_1'];echo $namafile= substr($data1,0,-3);?></span>
+														<span class="ball_result_page"><?php $data1=$data_1st['hasil_1'];echo $namafile= substr($data1,1,-2);?></span>
+														<span class="ball_result_page"><?php $data1=$data_1st['hasil_1'];echo $namafile= substr($data1,2,-1);?></span>
+														<span class="ball_result_page"><?php $data1=$data_1st['hasil_1'];echo $namafile= substr($data1,3,1);?></span>
+													</div>
+												</td>
+											</tr>
+										<?php } else { ?>
+											<tr>
+												<td>
+												<?php echo $data_1st['hasil_id']; ?>
+												</td>
+												<td class="td_mobile">
+													<span style="text-transform:capitalize;"><?php echo $data_1st['hari']; ?></span>
+												</td>
+												<td class="td_date">
+													<?php 
+														echo date_format($date,"d-m-Y");?> 	
+												</td>
+												<td>
+													<div class="result_page" style="text-align:center;">
+														<span class="ball_result_page"><?php $data1=$data_1st['hasil_1'];echo $namafile= substr($data1,0,-3);?></span>
+														<span class="ball_result_page"><?php $data1=$data_1st['hasil_1'];echo $namafile= substr($data1,1,-2);?></span>
+														<span class="ball_result_page"><?php $data1=$data_1st['hasil_1'];echo $namafile= substr($data1,2,-1);?></span>
+														<span class="ball_result_page"><?php $data1=$data_1st['hasil_1'];echo $namafile= substr($data1,3,1);?></span>
+													</div>
+												</td>
+											</tr>
 										<?php } ?>
+										
+									<?php } ?>
 								</tbody>
-				</table>	
-			</div> 
+							</table>	
+						</div> 
 
-
-				
 			</div>
 		</div>
 	</header>
