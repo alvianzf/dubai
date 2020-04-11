@@ -22,7 +22,7 @@
 											
 											<?php 
 											if(date_format($date,"d") == date("d") && strtotime(date("H:i:s")) < strtotime($show_time['first_result_time'])) { ?>
-												<span>Result Will Appear At <?php echo $show_time['first_result_time'] ?></span>
+												
 												
 											<?php } elseif(date_format($date,"d") == date("d") && strtotime(date("H:i:s")) > strtotime($show_time['first_result_time'])){ ?>
 												<span class="ball_result"><?php $data1=$data_1st['hasil_1'];echo $namafile= substr($data1,0,-3);?></span>
@@ -49,7 +49,7 @@
 											<div class="result" style="text-align:center;">
 											<?php 
 												if(date_format($date,"d") == date("d") && strtotime(date("H:i:s")) < strtotime($show_time['second_result_time'])) { ?>
-													<span>Result Will Appear At <?php echo $show_time['second_result_time'] ?></span>
+													
 													
 												<?php } elseif(date_format($date,"d") == date("d") && strtotime(date("H:i:s")) > strtotime($show_time['second_result_time'])){ ?>
 													<span class="ball_result"><?php $data1=$data_1st['hasil_2'];echo $namafile= substr($data1,0,-3);?></span>
@@ -76,7 +76,7 @@
 											<div class="result" style="text-align:center;">
 												<?php 
 												if(date_format($date,"d") == date("d") && strtotime(date("H:i:s")) < strtotime($show_time['third_result_time'])) { ?>
-													<span>Result Will Appear At <?php echo $show_time['third_result_time'] ?></span>
+
 													
 												<?php } elseif(date_format($date,"d") == date("d") && strtotime(date("H:i:s")) > strtotime($show_time['third_result_time'])){ ?>
 													<span class="ball_result"><?php $data1=$data_1st['hasil_3'];echo $namafile= substr($data1,0,-3);?></span>
