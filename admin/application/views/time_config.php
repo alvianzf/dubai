@@ -1,8 +1,4 @@
 <?php
-	include "config/config.php";
-	$sql = "SELECT * FROM waktu_tbl where waktu_id = 1";
-	$qsql = $koneksi->query($sql);
-	$rsql =$qsql->fetch_assoc();
 	do{
 ?>
 <div class="section-admin">
@@ -82,5 +78,5 @@
 </div><!-- End of Page Content -->
 
 
-<?php } while($rsql =$qsql->Fetch_assoc()) ?>
+<?php } while($rsql= $times) ?>
 

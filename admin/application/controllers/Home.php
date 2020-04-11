@@ -11,6 +11,7 @@ class Home extends CI_Controller
 		$this->load->helper('string');
 		$this->load->model('ProductsModel');
 		$this->load->model('AdminModel');
+		$this->load->model('TimeModel');
 	}
 	/*Show Table*/
 	public function index()
@@ -241,6 +242,8 @@ class Home extends CI_Controller
 
 	public function Time(){
 		$data['content_page']="time_config";
+		$data['times'] = $this->TimeModel->getTimes();
+		
 		$this->load->view('index',$data);
 	}
 	public function updateTimeSubmit(){
