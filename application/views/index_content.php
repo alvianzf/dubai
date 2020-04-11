@@ -15,6 +15,34 @@
 					$timeinms = 0;
 				}
 				?>
+				<?php 
+			if(strtotime(date("H:i:s")) < strtotime($show_time['second_result_time']) ) {
+					$time = abs(strtotime(date("H:i:s")) - strtotime($show_time['second_result_time'])); 
+					$timeinms = $time * 1000;
+			?>	
+				<script>
+					setTimeout(function() {
+						location.reload();
+					}, <?php echo $timeinms; ?>);
+				</script>
+				<?php } else {
+					$timeinms = 0;
+				}
+				?>
+				<?php 
+			if(strtotime(date("H:i:s")) < strtotime($show_time['third_result_time']) ) {
+					$time = abs(strtotime(date("H:i:s")) - strtotime($show_time['third_result_time'])); 
+					$timeinms = $time * 1000;
+			?>	
+				<script>
+					setTimeout(function() {
+						location.reload();
+					}, <?php echo $timeinms; ?>);
+				</script>
+				<?php } else {
+					$timeinms = 0;
+				}
+				?>
 		      <div class="container">
 		      	<header class="jumbotron my-4">
 		      		<div class="container">
