@@ -1,10 +1,5 @@
 <?php
-include "config/config.php";
-$sidebar_id=1;
-$sql = "SELECT * FROM sidebar where sidebar_id = $sidebar_id";
-$qsql = $koneksi->query($sql);
-$rsql =$qsql->fetch_assoc();
-do{
+	foreach($sidebars as $rsql){
 ?>
 <!--  -->
 <div class="section-admin container-fluid">
@@ -61,5 +56,5 @@ do{
 	</div>
 </div>
 
-<?php } while($rsql =$qsql->Fetch_assoc()) ?>
+<?php } ?>
 

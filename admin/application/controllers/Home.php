@@ -12,6 +12,7 @@ class Home extends CI_Controller
 		$this->load->model('ProductsModel');
 		$this->load->model('AdminModel');
 		$this->load->model('TimeModel');
+		$this->load->model('AdminSidebarModel');
 	}
 	/*Show Table*/
 	public function index()
@@ -353,6 +354,7 @@ class Home extends CI_Controller
 
 	public function Sidebar(){
 		$data['content_page']="sidebar";
+		$data['sidebars'] = $this->AdminSidebarModel->getSidebar(1);
 		$this->load->view('index',$data);
 	}
 	public function updateSidebar(){
