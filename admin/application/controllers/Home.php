@@ -383,7 +383,6 @@ class Home extends CI_Controller
 	public function changePassword()
 	{
 		$username = $this->session->userdata('username');
-		$qsql = $koneksi->query($sql);
 		$rsql = $this->AdminModel->getUserByUsername($username);
 
 		$admin_id = $rsql[0]['admin_id'];
