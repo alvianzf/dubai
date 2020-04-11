@@ -13,6 +13,7 @@ class Home extends CI_Controller
 		$this->load->model('AdminModel');
 		$this->load->model('TimeModel');
 		$this->load->model('AdminSidebarModel');
+		$this->load->model('AdminSiteInfoModel');
 	}
 	/*Show Table*/
 	public function index()
@@ -286,6 +287,7 @@ class Home extends CI_Controller
 
 	public function CustomSite(){
 		$data['content_page']="content_site";
+		$data['sites'] = $this->AdminSiteInfoModel->getSiteInfo(1);
 		$this->load->view('index',$data);
 	}
 	public function updateCustomSite(){

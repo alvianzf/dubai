@@ -1,11 +1,5 @@
 <?php
-include "config/config.php";
-header('Content-Type: text/html; charset=utf-8');
-mysqli_set_charset($koneksi,"utf8");
-$sql = "SELECT * FROM siteinfo where siteinfo_id = 1";
-$qsql = $koneksi->query($sql);
-$rsql =$qsql->fetch_assoc();
-do{
+	foreach($sites as $rsql) {
 ?>
 <!--  -->
 <div class="section-admin container-fluid">
@@ -135,5 +129,5 @@ do{
 	</div>
 </div>
 
-<?php } while($rsql =$qsql->Fetch_assoc()) ?>
+<?php }  ?>
 
