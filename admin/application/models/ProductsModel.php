@@ -68,30 +68,22 @@ class ProductsModel extends CI_Model
 		$qsql = $this->db->query($sql);
 		return $qsql->result_array();
 	}
-	/*
-	public function getResult2nd($limit=0)
+	
+	public function getResultTanggalFor1st()
 	{
-		if($limit>0){
-			$sql="SELECT * FROM 2nd_hasil_tbl ORDER BY tanggal DESC LIMIT ". $limit;
-		}
-		else{
-			$sql="SELECT * FROM 2nd_hasil_tbl ORDER BY tanggal DESC";
-		}
+		$sql = "SELECT tanggal from 1st_hasil_tbl ORDER BY tanggal desc";
+
 		$qsql = $this->db->query($sql);
 		return $qsql->result_array();
 	}
 
-	public function getResult3rd($limit=0)
+	public function getResultTanggalCons()
 	{
-		if($limit>0){
-			$sql="SELECT * FROM 3rd_hasil_tbl ORDER BY tanggal DESC LIMIT ". $limit;
-		}
-		else{
-			$sql="SELECT * FROM 3rd_hasil_tbl ORDER BY tanggal DESC";
-		}
+		$sql = "SELECT tanggal from cons_hasil_tbl ORDER BY tanggal desc";
+
 		$qsql = $this->db->query($sql);
 		return $qsql->result_array();
 	}
-*/
+
 }
 

@@ -30,6 +30,13 @@ class AdminModel extends CI_Model
 		$qsql = $this->db->query($sql);
 		return $qsql->num_rows();
 	}
+
+	public function getUserByUsername($username){
+		$sql = "SELECT * FROM admin_tbl WHERE username like '%$username%'";
+		$qsql = $this->db->query($sql);
+
+		return $qsql->result_array();
+	}
 }
 
 
