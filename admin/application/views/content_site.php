@@ -1,9 +1,5 @@
 <?php
-include "config/config.php";
-$sql = "SELECT * FROM content where content_id = 1";
-$qsql = $koneksi->query($sql);
-$rsql =$qsql->fetch_assoc();
-do{
+foreach($contents as $rsql ){
 ?>
 <!--  -->
 <div class="section-admin container-fluid">
@@ -55,5 +51,5 @@ do{
 	</div>
 </div>
 
-<?php } while($rsql =$qsql->Fetch_assoc()) ?>
+<?php } ?>
 
