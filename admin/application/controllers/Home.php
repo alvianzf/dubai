@@ -243,7 +243,7 @@ class Home extends CI_Controller
 	public function Time(){
 		$data['content_page']="time_config";
 		$data['times'] = $this->TimeModel->getTimes();
-		
+
 		$this->load->view('index',$data);
 	}
 	public function updateTimeSubmit(){
@@ -253,33 +253,23 @@ class Home extends CI_Controller
 		$third_prize=$_POST['3rd_prize'];
 		$spec_1=$_POST['spec_1'];
 		$spec_2=$_POST['spec_2'];
-		$spec_3=$_POST['spec_3'];
-		$spec_4=$_POST['spec_4'];
-		$spec_5=$_POST['spec_5'];
-		$spec_6=$_POST['spec_6'];
-		$cons_1=$_POST['cons_1'];
-		$cons_2=$_POST['cons_2'];
-		$cons_3=$_POST['cons_3'];
-		$cons_4=$_POST['cons_4'];
-		$cons_5=$_POST['cons_5'];
-		$cons_6=$_POST['cons_6'];
+		// $spec_3=$_POST['spec_3'];
+		// $spec_4=$_POST['spec_4'];
+		// $spec_5=$_POST['spec_5'];
+		// $spec_6=$_POST['spec_6'];
+		// $cons_1=$_POST['cons_1'];
+		// $cons_2=$_POST['cons_2'];
+		// $cons_3=$_POST['cons_3'];
+		// $cons_4=$_POST['cons_4'];
+		// $cons_5=$_POST['cons_5'];
+		// $cons_6=$_POST['cons_6'];
 
 		$sql = "UPDATE waktu_tbl SET
 		1st_prize= '" . $first_prize . "',
 		2nd_prize='" . $second_prize . "',
 		3rd_prize='" . $third_prize . "',
 		spec_1='" . $spec_1 . "',
-		spec_2='" . $spec_2 . "',
-		spec_3='" . $spec_3 . "',
-		spec_4='" . $spec_4 . "',
-		spec_5='" . $spec_5 . "',
-		spec_6='" . $spec_6 . "',
-		cons_1='" . $cons_1 . "',
-		cons_2='" . $cons_2 . "',
-		cons_3='" . $cons_3 . "',
-		cons_4='" . $cons_4 . "',
-		cons_5='" . $cons_5 . "',
-		cons_6='" . $cons_6 . "'
+		spec_2='" . $spec_2 . "'
 		where waktu_id =". $waktu_id;
 		
 
