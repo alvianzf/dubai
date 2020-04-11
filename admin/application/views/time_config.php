@@ -1,5 +1,5 @@
 <?php
-	do{
+	foreach($times as $rsql) {
 ?>
 <div class="section-admin">
 	<div class="container-fluid">
@@ -78,5 +78,5 @@
 </div><!-- End of Page Content -->
 
 
-<?php } while($rsql= $times) ?>
+<?php } ?>
 
