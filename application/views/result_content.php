@@ -55,11 +55,15 @@
 											</td>
 										</tr>
 										<?php }  ?>
-										
+												
 											</tbody>
 										</table>
 									</div>
+									
 									<!-- End Content -->
+								</div>
+								<div class="text-center">
+									<?php echo $links; ?>
 								</div>
 							</div>
 						
