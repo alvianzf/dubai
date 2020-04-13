@@ -66,6 +66,7 @@ class Result extends CI_Controller
 		$data['sidebar_data'] = sidebarData();
 		$data['content_site'] = contentSite();
 		$data["links"] = $this->pagination->create_links();
+		$data['show_time'] = $this->ProductsModel->getTimeShow();
 		$this->load->view('index',$data);
 	}
 
