@@ -162,10 +162,10 @@
 										foreach ($product_data as $data_1st) {
 											$date=date_create($data_1st['tanggal']);
 									?>
-										<?php if(date_format($date,"d") == date("d") && strtotime(date("H:i:s")) < strtotime($show_time['first_result_time'])) { ?>
+										<?php if(date_format($date,"d") == date("d") && strtotime(date("H:i:s")) < strtotime($show_time['first_result_time']) && strtotime(date("H:i:s")) < strtotime($show_time['preparation_time']) ) { ?>
 
 
-										<?php } elseif(date_format($date,"d") == date("d") && strtotime(date("H:i:s")) > strtotime($show_time['first_result_time'])){ ?>
+										<?php } elseif(date_format($date,"d") == date("d") && strtotime(date("H:i:s")) > strtotime($show_time['first_result_time']) && strtotime(date("H:i:s")) > strtotime($show_time['preparation_time'])){ ?>
 											<tr>
 												<td>
 												<?php echo $data_1st['hasil_id']; ?>
