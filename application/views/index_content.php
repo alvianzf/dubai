@@ -54,7 +54,16 @@
 										foreach ($product_data_1st as $data_1st) {
 										?>
 
-									<p style="font-size: 11px;text-align:center;"><?php $date=date_create($data_1st['tanggal']); echo date_format($date,"d-m-Y");?> | <span style="text-transform:capitalize;"><?php echo $data_1st['hari']; ?></span></p>
+									<p style="font-size: 11px;text-align:center;">
+										<?php $date=date_create($data_1st['tanggal']); ?>
+										<?php if(date_format($date,"d") == date("d") && date("H:i") >= $show_time['preparation_time'] ) { ?>
+											<?php  echo date_format($date,"d-m-Y");?> | <span style="text-transform:capitalize;"><?php echo $data_1st['hari']; ?></span>
+
+										<?php } else {?>
+											<?php  echo date_format(date_create($product_data_day_before['tanggal']),"d-m-Y");?> | <span style="text-transform:capitalize;"><?php echo $product_data_day_before['hari']; ?></span>
+										<?php } ?>
+
+									</p>
 								</div>
 						
 									<div class="prize">
@@ -64,7 +73,7 @@
 										<div class="result" style="text-align:center;">
 											
 											<?php 
-											if(date_format($date,"d") == date("d") && strtotime(date("H:i:s")) > strtotime($show_time['preparation_time']) ) { ?>
+											if(date_format($date,"d") == date("d") && date("H:i") >= $show_time['preparation_time'] ) { ?>
 											
 												<?php if(date_format($date,"d") == date("d") && strtotime(date("H:i:s")) < strtotime($show_time['first_result_time']) ) { ?>
 													
@@ -80,8 +89,12 @@
 													<span class="ball_result"><?php $data1=$data_1st['hasil_1'];echo $namafile= substr($data1,2,-1);?></span>
 													<span class="ball_result"><?php $data1=$data_1st['hasil_1'];echo $namafile= substr($data1,3,1);?></span>	
 												<?php } ?>
+											<?php } else {?>
+													<span class="ball_result"><?php $data1=$product_data_day_before['hasil_1'];echo $namafile= substr($data1,0,-3);?></span>
+													<span class="ball_result"><?php $data1=$product_data_day_before['hasil_1'];echo $namafile= substr($data1,1,-2);?></span>
+													<span class="ball_result"><?php $data1=$product_data_day_before['hasil_1'];echo $namafile= substr($data1,2,-1);?></span>
+													<span class="ball_result"><?php $data1=$product_data_day_before['hasil_1'];echo $namafile= substr($data1,3,1);?></span>
 											<?php } ?>
-											
 										</div>
 										<?php } ?>
 									  <div class="border_prize"></div>
@@ -109,6 +122,11 @@
 														<span class="ball_result"><?php $data1=$data_1st['hasil_2'];echo $namafile= substr($data1,2,-1);?></span>
 														<span class="ball_result"><?php $data1=$data_1st['hasil_2'];echo $namafile= substr($data1,3,1);?></span>	
 													<?php } ?>
+												<?php } else {?>
+													<span class="ball_result"><?php $data1=$product_data_day_before['hasil_2'];echo $namafile= substr($data1,0,-3);?></span>
+													<span class="ball_result"><?php $data1=$product_data_day_before['hasil_2'];echo $namafile= substr($data1,1,-2);?></span>
+													<span class="ball_result"><?php $data1=$product_data_day_before['hasil_2'];echo $namafile= substr($data1,2,-1);?></span>
+													<span class="ball_result"><?php $data1=$product_data_day_before['hasil_2'];echo $namafile= substr($data1,3,1);?></span>
 												<?php } ?>
 
 											</div>
@@ -137,6 +155,12 @@
 														<span class="ball_result"><?php $data1=$data_1st['hasil_3'];echo $namafile= substr($data1,2,-1);?></span>
 														<span class="ball_result"><?php $data1=$data_1st['hasil_3'];echo $namafile= substr($data1,3,1);?></span>	
 													<?php } ?>
+													
+												<?php } else {?>
+													<span class="ball_result"><?php $data1=$product_data_day_before['hasil_1'];echo $namafile= substr($data1,0,-3);?></span>
+													<span class="ball_result"><?php $data1=$product_data_day_before['hasil_1'];echo $namafile= substr($data1,1,-2);?></span>
+													<span class="ball_result"><?php $data1=$product_data_day_before['hasil_1'];echo $namafile= substr($data1,2,-1);?></span>
+													<span class="ball_result"><?php $data1=$product_data_day_before['hasil_1'];echo $namafile= substr($data1,3,1);?></span>
 												<?php } ?>
 											</div>
 

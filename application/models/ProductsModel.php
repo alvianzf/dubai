@@ -89,19 +89,14 @@ class ProductsModel extends CI_Model
 		$qsql = $this->db->query($sql);
 		return $qsql->result_array();
 	}
-	public function getResult_spec_1_before($limit=0){
-		$dt = new DateTime();
-		$dt->sub(new DateInterval('P1D'));
-		$tanggal=$dt->format('Y-m-d');
-		if($limit>0){
-			$sql = "SELECT * FROM cons_hasil_tbl WHERE tanggal like '$tanggal' ORDER BY tanggal LIMIT 0,1";
-		}
-		else{
-			$sql = "SELECT * FROM cons_hasil_tbl ORDER BY tanggal DESC";
-		}
+	public function getResult_day_before(){
+
+		$tanggal=date('Y-m-d',strtotime("-1 days"));
+
+		$sql = $sql = "SELECT * FROM 1st_hasil_tbl WHERE tanggal like '$tanggal' ORDER BY tanggal DESC";
 		//echo $sql;exit;
 		$qsql = $this->db->query($sql);
-		return $qsql->result_array();
+		return $qsql->result_array()[0];
 	}
 
 	public function getTimeShow() 

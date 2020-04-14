@@ -29,7 +29,7 @@ class Home extends CI_Controller
 		$data['product_data_1st_before']=$this->ProductsModel->getResult_prize_1_before(1);
 
 		$data['product_data_spec_1']=$this->ProductsModel->getResult_spec_1(1);
-		$data['product_data_spec_1_before']=$this->ProductsModel->getResult_spec_1_before(1);
+		$data['product_data_day_before']=$this->ProductsModel->getResult_day_before();
 
 		$data['show_time'] = $this->ProductsModel->getTimeShow();
 		/*$data['product_data_hari']=$this->ProductsModel->getResult_prize_1_hari(7);*/
