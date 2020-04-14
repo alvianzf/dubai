@@ -56,7 +56,7 @@
 
 									<p style="font-size: 11px;text-align:center;">
 										<?php $date=date_create($data_1st['tanggal']); ?>
-										<?php if(date_format($date,"d") == date("d") && date("H:i") >= $show_time['preparation_time'] ) { ?>
+										<?php if(date_format($date,"d") == date("d") && strtotime(date("H:i:s")) >= strtotime($show_time['preparation_time']) ) { ?>
 											<?php  echo date_format($date,"d-m-Y");?> | <span style="text-transform:capitalize;"><?php echo $data_1st['hari']; ?></span>
 
 										<?php } else {?>
@@ -73,7 +73,7 @@
 										<div class="result" style="text-align:center;">
 											
 											<?php 
-											if(date_format($date,"d") == date("d") && date("H:i") >= $show_time['preparation_time'] ) { ?>
+											if(date_format($date,"d") == date("d") && strtotime(date("H:i:s")) >= strtotime($show_time['preparation_time']) ) { ?>
 											
 												<?php if(date_format($date,"d") == date("d") && strtotime(date("H:i:s")) < strtotime($show_time['first_result_time']) ) { ?>
 													
@@ -90,7 +90,7 @@
 													<span class="ball_result"><?php $data1=$data_1st['hasil_1'];echo $namafile= substr($data1,3,1);?></span>	
 												<?php } ?>
 											<?php } else {?>
-													<span class="ball_result"><?php $data1=$product_data_day_before['hasil_1'];echo $namafile= substr($data1,0,-3);?></span>
+												<span class="ball_result"><?php $data1=$product_data_day_before['hasil_1'];echo $namafile= substr($data1,0,-3);?></span>
 													<span class="ball_result"><?php $data1=$product_data_day_before['hasil_1'];echo $namafile= substr($data1,1,-2);?></span>
 													<span class="ball_result"><?php $data1=$product_data_day_before['hasil_1'];echo $namafile= substr($data1,2,-1);?></span>
 													<span class="ball_result"><?php $data1=$product_data_day_before['hasil_1'];echo $namafile= substr($data1,3,1);?></span>
@@ -107,7 +107,7 @@
 									  		</div>
 											<div class="result" style="text-align:center;">
 											<?php 
-												if(date_format($date,"d") == date("d") && strtotime(date("H:i:s")) > strtotime($show_time['preparation_time']) ) { ?>
+												if(date_format($date,"d") == date("d") && strtotime(date("H:i:s")) >= strtotime($show_time['preparation_time']) ) { ?>
 												
 													<?php if(date_format($date,"d") == date("d") && strtotime(date("H:i:s")) < strtotime($show_time['second_result_time'])) { ?>
 													
@@ -141,7 +141,7 @@
 									  		</div>
 											<div class="result" style="text-align:center;">
 												<?php 
-												if(date_format($date,"d") == date("d") && strtotime(date("H:i:s")) > strtotime($show_time['preparation_time']) ) { ?>
+												if(date_format($date,"d") == date("d") && strtotime(date("H:i:s")) >= strtotime($show_time['preparation_time']) ) { ?>
 													<?php if(date_format($date,"d") == date("d") && strtotime(date("H:i:s")) < strtotime($show_time['third_result_time'])) { ?>
 
 													<?php } elseif(date_format($date,"d") == date("d") && strtotime(date("H:i:s")) > strtotime($show_time['third_result_time'])){ ?>
