@@ -2,6 +2,20 @@
 	<?php if (isset($content_page)) { ?>
         <?php if ($content_page == "index_content") { ?>
 			<?php 
+				if(strtotime(date("H:i:s")) <= strtotime($show_time['preparation_time']) ) {
+					$time = abs(strtotime(date("H:i:s")) - strtotime($show_time['preparation_time'])); 
+					$timeinms = $time * 1000;
+			?>	
+				<script>
+					setTimeout(function() {
+						location.reload();
+					}, <?php echo $timeinms; ?>);
+				</script>
+				<?php } else {
+					$timeinms = 0;
+				}
+				?>
+			<?php 
 				if(strtotime(date("H:i:s")) < strtotime($show_time['first_result_time']) ) {
 					$time = abs(strtotime(date("H:i:s")) - strtotime($show_time['first_result_time'])); 
 					$timeinms = $time * 1000;
