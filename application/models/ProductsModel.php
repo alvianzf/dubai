@@ -89,12 +89,11 @@ class ProductsModel extends CI_Model
 		$qsql = $this->db->query($sql);
 		return $qsql->result_array();
 	}
-	public function getResult_day_before(){
-
+	public function getResult_day_before()
+	{
+		date_default_timezone_set('Asia/Jakarta');
 		$tanggal=date('Y-m-d',strtotime("-1 days"));
-
 		$sql = $sql = "SELECT * FROM 1st_hasil_tbl WHERE tanggal like '$tanggal' ORDER BY tanggal DESC";
-		//echo $sql;exit;
 		$qsql = $this->db->query($sql);
 		return $qsql->result_array()[0];
 	}
